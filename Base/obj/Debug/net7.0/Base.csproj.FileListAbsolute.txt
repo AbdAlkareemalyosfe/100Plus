@@ -1,0 +1,34 @@
+D:\HundedPlus\Base\bin\Debug\net7.0\Base.deps.json
+D:\HundedPlus\Base\bin\Debug\net7.0\Base.runtimeconfig.json
+D:\HundedPlus\Base\bin\Debug\net7.0\Base.dll
+D:\HundedPlus\Base\bin\Debug\net7.0\Base.pdb
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.csproj.AssemblyReference.cache
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.GeneratedMSBuildEditorConfig.editorconfig
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.AssemblyInfoInputs.cache
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.AssemblyInfo.cs
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.csproj.CoreCompileInputs.cache
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.dll
+D:\HundedPlus\Base\obj\Debug\net7.0\refint\Base.dll
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.pdb
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.genruntimeconfig.cache
+D:\HundedPlus\Base\obj\Debug\net7.0\ref\Base.dll
+D:\HundedPlus\Base\bin\Debug\net7.0\Shared Core.dll
+D:\HundedPlus\Base\bin\Debug\net7.0\Shared Core.pdb
+D:\HundedPlus\Base\obj\Debug\net7.0\Base.csproj.CopyComplete
+D:\100Plus\Base\bin\Debug\net7.0\Base.deps.json
+D:\100Plus\Base\bin\Debug\net7.0\Base.runtimeconfig.json
+D:\100Plus\Base\bin\Debug\net7.0\Base.dll
+D:\100Plus\Base\bin\Debug\net7.0\Base.pdb
+D:\100Plus\Base\bin\Debug\net7.0\Shared Core.dll
+D:\100Plus\Base\bin\Debug\net7.0\Shared Core.pdb
+D:\100Plus\Base\obj\Debug\net7.0\Base.csproj.AssemblyReference.cache
+D:\100Plus\Base\obj\Debug\net7.0\Base.GeneratedMSBuildEditorConfig.editorconfig
+D:\100Plus\Base\obj\Debug\net7.0\Base.AssemblyInfoInputs.cache
+D:\100Plus\Base\obj\Debug\net7.0\Base.AssemblyInfo.cs
+D:\100Plus\Base\obj\Debug\net7.0\Base.csproj.CoreCompileInputs.cache
+D:\100Plus\Base\obj\Debug\net7.0\Base.csproj.CopyComplete
+D:\100Plus\Base\obj\Debug\net7.0\Base.dll
+D:\100Plus\Base\obj\Debug\net7.0\refint\Base.dll
+D:\100Plus\Base\obj\Debug\net7.0\Base.pdb
+D:\100Plus\Base\obj\Debug\net7.0\Base.genruntimeconfig.cache
+D:\100Plus\Base\obj\Debug\net7.0\ref\Base.dll

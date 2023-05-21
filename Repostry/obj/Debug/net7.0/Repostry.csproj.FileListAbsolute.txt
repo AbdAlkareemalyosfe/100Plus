@@ -1,0 +1,42 @@
+D:\HundedPlus\Repostry\bin\Debug\net7.0\Repostry.deps.json
+D:\HundedPlus\Repostry\bin\Debug\net7.0\Repostry.runtimeconfig.json
+D:\HundedPlus\Repostry\bin\Debug\net7.0\Repostry.dll
+D:\HundedPlus\Repostry\bin\Debug\net7.0\Repostry.pdb
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.csproj.AssemblyReference.cache
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.GeneratedMSBuildEditorConfig.editorconfig
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.AssemblyInfoInputs.cache
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.AssemblyInfo.cs
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.csproj.CoreCompileInputs.cache
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.dll
+D:\HundedPlus\Repostry\obj\Debug\net7.0\refint\Repostry.dll
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.pdb
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.genruntimeconfig.cache
+D:\HundedPlus\Repostry\obj\Debug\net7.0\ref\Repostry.dll
+D:\HundedPlus\Repostry\bin\Debug\net7.0\Base.dll
+D:\HundedPlus\Repostry\bin\Debug\net7.0\IRepostry.dll
+D:\HundedPlus\Repostry\bin\Debug\net7.0\Shared Core.dll
+D:\HundedPlus\Repostry\bin\Debug\net7.0\Base.pdb
+D:\HundedPlus\Repostry\bin\Debug\net7.0\IRepostry.pdb
+D:\HundedPlus\Repostry\bin\Debug\net7.0\Shared Core.pdb
+D:\HundedPlus\Repostry\obj\Debug\net7.0\Repostry.csproj.CopyComplete
+D:\100Plus\Repostry\bin\Debug\net7.0\Repostry.deps.json
+D:\100Plus\Repostry\bin\Debug\net7.0\Repostry.runtimeconfig.json
+D:\100Plus\Repostry\bin\Debug\net7.0\Repostry.dll
+D:\100Plus\Repostry\bin\Debug\net7.0\Repostry.pdb
+D:\100Plus\Repostry\bin\Debug\net7.0\Base.dll
+D:\100Plus\Repostry\bin\Debug\net7.0\IRepostry.dll
+D:\100Plus\Repostry\bin\Debug\net7.0\Shared Core.dll
+D:\100Plus\Repostry\bin\Debug\net7.0\Base.pdb
+D:\100Plus\Repostry\bin\Debug\net7.0\IRepostry.pdb
+D:\100Plus\Repostry\bin\Debug\net7.0\Shared Core.pdb
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.csproj.AssemblyReference.cache
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.GeneratedMSBuildEditorConfig.editorconfig
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.AssemblyInfoInputs.cache
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.AssemblyInfo.cs
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.csproj.CoreCompileInputs.cache
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.csproj.CopyComplete
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.dll
+D:\100Plus\Repostry\obj\Debug\net7.0\refint\Repostry.dll
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.pdb
+D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.genruntimeconfig.cache
+D:\100Plus\Repostry\obj\Debug\net7.0\ref\Repostry.dll

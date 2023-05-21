@@ -1,0 +1,38 @@
+D:\HundedPlus\IRepostry\bin\Debug\net7.0\IRepostry.deps.json
+D:\HundedPlus\IRepostry\bin\Debug\net7.0\IRepostry.runtimeconfig.json
+D:\HundedPlus\IRepostry\bin\Debug\net7.0\IRepostry.dll
+D:\HundedPlus\IRepostry\bin\Debug\net7.0\IRepostry.pdb
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.csproj.AssemblyReference.cache
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.GeneratedMSBuildEditorConfig.editorconfig
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.AssemblyInfoInputs.cache
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.AssemblyInfo.cs
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.csproj.CoreCompileInputs.cache
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.dll
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\refint\IRepostry.dll
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.pdb
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.genruntimeconfig.cache
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\ref\IRepostry.dll
+D:\HundedPlus\IRepostry\bin\Debug\net7.0\Base.dll
+D:\HundedPlus\IRepostry\bin\Debug\net7.0\Shared Core.dll
+D:\HundedPlus\IRepostry\bin\Debug\net7.0\Base.pdb
+D:\HundedPlus\IRepostry\bin\Debug\net7.0\Shared Core.pdb
+D:\HundedPlus\IRepostry\obj\Debug\net7.0\IRepostry.csproj.CopyComplete
+D:\100Plus\IRepostry\bin\Debug\net7.0\IRepostry.deps.json
+D:\100Plus\IRepostry\bin\Debug\net7.0\IRepostry.runtimeconfig.json
+D:\100Plus\IRepostry\bin\Debug\net7.0\IRepostry.dll
+D:\100Plus\IRepostry\bin\Debug\net7.0\IRepostry.pdb
+D:\100Plus\IRepostry\bin\Debug\net7.0\Base.dll
+D:\100Plus\IRepostry\bin\Debug\net7.0\Shared Core.dll
+D:\100Plus\IRepostry\bin\Debug\net7.0\Base.pdb
+D:\100Plus\IRepostry\bin\Debug\net7.0\Shared Core.pdb
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.csproj.AssemblyReference.cache
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.GeneratedMSBuildEditorConfig.editorconfig
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.AssemblyInfoInputs.cache
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.AssemblyInfo.cs
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.csproj.CoreCompileInputs.cache
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.csproj.CopyComplete
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.dll
+D:\100Plus\IRepostry\obj\Debug\net7.0\refint\IRepostry.dll
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.pdb
+D:\100Plus\IRepostry\obj\Debug\net7.0\IRepostry.genruntimeconfig.cache
+D:\100Plus\IRepostry\obj\Debug\net7.0\ref\IRepostry.dll
