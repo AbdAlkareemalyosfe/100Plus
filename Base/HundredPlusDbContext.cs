@@ -15,7 +15,8 @@ namespace Base
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
+            modelBuilder.Entity<Product>()
+              .HasMany(o => o.Offers).WithOne(p => p.product).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Category>()
                 .HasOne(p => p.Product).WithMany(c => c.Categories).OnDelete(DeleteBehavior.Restrict);
             modelBuilder.Entity<Category>()
@@ -24,8 +25,7 @@ namespace Base
                 .HasOne(o => o.Offer).WithMany(c => c.Categories);
             modelBuilder.Entity<User>()
                 .HasMany(o => o.orders).WithOne(u => u.user).OnDelete(DeleteBehavior.Restrict);
-            modelBuilder.Entity<Product>()
-              .HasMany(o => o.Offers).WithOne(p => p.product).OnDelete(DeleteBehavior.Restrict);
+            
         }
         public DbSet<Category> Categores { get; set; }
         public DbSet<Offer> Offers { get; set; }

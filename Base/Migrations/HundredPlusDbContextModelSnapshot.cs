@@ -76,9 +76,6 @@ namespace Base.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<DateTimeOffset>("CreatedDate")
                         .HasColumnType("datetimeoffset");
 
@@ -89,8 +86,9 @@ namespace Base.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EndOffer")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("EndOffer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -102,16 +100,10 @@ namespace Base.Migrations
                     b.Property<double>("Newprice")
                         .HasColumnType("float");
 
-                    b.Property<double>("PrevisonPrice")
-                        .HasColumnType("float");
-
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("StartOffer")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("content")
+                    b.Property<string>("StartOffer")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

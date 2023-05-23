@@ -1,7 +1,7 @@
-﻿using Base.Models;
+﻿using IRepostry.IRepo;
 using IRepostry.Model_Dto;
 using Microsoft.AspNetCore.Mvc;
-using Repostry.Repo;
+using Shared_Core;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,9 +11,9 @@ namespace HundedPlus.Controllers
     [ApiController]
     public class ProductControle : ControllerBase
     {
-        private readonly RepoProduct repoProduct;
+        private readonly IRepoProduct repoProduct;
 
-        public ProductControle(RepoProduct repoProduct)
+        public ProductControle(IRepoProduct repoProduct)
         {
             this.repoProduct = repoProduct;
         }
@@ -22,43 +22,73 @@ namespace HundedPlus.Controllers
         [HttpGet("GetAllProduct")]
        public async Task<IActionResult> GetAllProduct()
         {
-            var products = await repoProduct.GetAllAsync(); 
-            return Ok(products);
+            var products = await repoProduct.GetAllAsync();
+            if (products == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(products.ToList());
+
         }    
 
         // GET api/<ProductControle>/5
-        [HttpGet("GetById")]
-        public async Task<IActionResult> GetById([FromBody]int id)
+        [HttpGet("GetByIdProduct")]
+        public async Task<IActionResult> GetById(int Id)
         {
-            var product =await repoProduct.GetByIdAsync(id);    
+            var product =await repoProduct.GetByIdAsync(Id);
+            if (product == null)
+            {
+                return NotFound();
+            }
             return Ok(product);
            
         }
 
         // POST api/<ProductControle>
-        [HttpPost("Add Product")]
+        [HttpPost("AddProduct")]
         public async Task<IActionResult> AddProduct([FromBody] ProductDtoModel productDto)
         {
-            var result = repoProduct.AddProduct(productDto);
-            return Ok(result);
+            var result = await repoProduct.AddProduct(productDto);
+            switch (result.OperrationResultType)
+            {
+                case OperationResultType.Exception:
+                    return new JsonResult("Exception") { StatusCode = 400 };
+                case OperationResultType.Success:
+                    return new JsonResult(result.Result) { StatusCode = 200 };
+            }
+            return new JsonResult("Unknown Error") { StatusCode = 500 };
         }
 
         // PUT api/<ProductControle>/5
-        [HttpPut(" Update Product{id}")]
-        public async Task<IActionResult>UpdateProduct(ProductDtoUpAndDelt DtoModel)
+        [HttpPut("UpdateProduct")]
+        public async Task<IActionResult>UpdateProduct(ProductDtoUp DtoModel)
         {
             var result = await repoProduct.UpdateProduct(DtoModel);
-            return Ok(result);
+            switch (result.OperrationResultType)
+            {
+                case OperationResultType.Exception:
+                    return new JsonResult("Exception") { StatusCode = 400 };
+                case OperationResultType.Success:
+                    return new JsonResult(result.Result) { StatusCode = 200 };
+            }
+            return new JsonResult("Unknown Error") { StatusCode = 500 };
         }
 
         // DELETE api/<ProductControle>/5
-        [HttpPut(" Delet Product{id}")]
+        [HttpPut("DeletProduct")]
         public async Task<IActionResult> DeletProduct(int Id )
         {
+           
            var result = repoProduct.DeletProduct(Id);
-            if(result)
-                return Ok( );
-            return BadRequest();
+            switch (result.OperrationResultType)
+            {
+                case OperationResultType.Exception:
+                    return new JsonResult("Exception") { StatusCode = 400 };
+                case OperationResultType.Success:
+                    return new JsonResult(result.Result) { StatusCode = 200 };
+            }
+            return new JsonResult("Unknown Error") { StatusCode = 500 };
         }
     }
 }

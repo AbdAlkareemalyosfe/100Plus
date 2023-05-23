@@ -10,7 +10,7 @@ namespace Shared_Core
     {
         public int Id { get; set; }
         public DateTimeOffset? DatetimeDeleted { get; set; }
-        public bool IsDeleted { get; set; }
+        public bool IsDeleted { get; set; } =false ;
         public DateTimeOffset CreatedDate { get; set; }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IRepostry.Model_Dto
 {
-    public  class ProductDtoUpAndDelt
+    public  class ProductDtoUp
     {
         [Required(ErrorMessage ="Id of product is required ")]
         [DisplayName("Id")]

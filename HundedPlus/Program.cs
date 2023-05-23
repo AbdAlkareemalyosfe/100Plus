@@ -1,8 +1,10 @@
 using Base;
 using IRepostry;
+using IRepostry.IRepo;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Repostry;
+using Repostry.Repo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,9 @@ builder.Services.AddDbContext<HundredPlusDbContext>(
     );
 
 builder.Services.AddScoped(typeof(IBaseRepostry<>),typeof(BaseRepostry<>)) ;
+builder.Services.AddScoped<IRepoProduct, RepoProduct>();
+builder.Services.AddScoped<IRepoOffer, RepoOffer>();
+builder.Services.AddScoped<IRepoCategory, RepoCategory>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
