@@ -2,6 +2,7 @@
 using Base.Models;
 using IRepostry.IRepo;
 using IRepostry.Model_Dto;
+using IRepostry.Model_Respons;
 using Microsoft.EntityFrameworkCore;
 using Shared_Core;
 using System;
@@ -12,16 +13,16 @@ using System.Threading.Tasks;
 
 namespace Repostry.Repo
 {
-    public class RepoProduct : BaseRepostry<Product>, IRepoProduct
+    public class RepoProduct : IRepoProduct
     {
         private readonly HundredPlusDbContext _context;
-        public RepoProduct(HundredPlusDbContext context) : base(context)
+        public RepoProduct(HundredPlusDbContext context)
         {
-            _context =context ;
+            _context = context;
         }
-        public async Task<OperationResult< Product>> AddProduct(ProductDtoModel productDto)
+        public async Task<OperationResult<ProductResponceInfo>> AddProduct(ProductDtoModel productDto)
         {
-            OperationResult<Product> operation = new OperationResult<Product>();
+            OperationResult<ProductResponceInfo> operation = new OperationResult<ProductResponceInfo>();
             try
             {
                 Product product = new Product()
@@ -32,19 +33,26 @@ namespace Repostry.Repo
                 };
                 var result = await _context.Products.AddAsync(product);
                 await _context.SaveChangesAsync();
-                operation.OperrationResultType=OperationResultType.Success;
-                operation.Result = product;
+                ProductResponceInfo productResponceInfo = new ProductResponceInfo()
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    Price = product.Price,
+                    Description = product.Description ?? ""
+                };
+                operation.OperrationResultType = OperationResultType.Success;
+                operation.Result = productResponceInfo;
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 operation.OperrationResultType = OperationResultType.Exception;
                 operation.Exception = ex;
             }
             return operation;
         }
-        public async Task<OperationResult<Product>> UpdateProduct(ProductDtoUp productDto)
+        public async Task<OperationResult<ProductResponceInfo>> UpdateProduct(ProductDtoUp productDto)
         {
-            OperationResult<Product> operation = new OperationResult<Product>();
+            OperationResult<ProductResponceInfo> operation = new OperationResult<ProductResponceInfo>();
             try
             {
                 var product = await _context.Products.Where(p => p.Id == productDto.Id).SingleOrDefaultAsync();
@@ -66,14 +74,27 @@ namespace Repostry.Repo
                         }
                         _context.Products.Update(product);
                         await _context.SaveChangesAsync();
+                        ProductResponceInfo productResponceInfo = new ProductResponceInfo()
+                        {
+                            Id = product.Id,
+                            Name = product.Name,
+                            Price = product.Price,
+                            Description = product.Description ?? ""
+                        };
+                        operation.OperrationResultType = OperationResultType.Success;
+                        operation.Result = productResponceInfo;
+                    }
+                    else
+                    {
+                        operation.OperrationResultType = OperationResultType.Failed;
+                        operation.Result = null;
                     }
                 }
-                operation.OperrationResultType = OperationResultType.Success;
-                operation.Result = product;
+
             }
-            catch( Exception ex )   
+            catch (Exception ex)
             {
-                operation.OperrationResultType=OperationResultType.Exception;
+                operation.OperrationResultType = OperationResultType.Exception;
                 operation.Exception = ex;
             }
 
@@ -84,15 +105,21 @@ namespace Repostry.Repo
             OperationResult<bool> operation = new OperationResult<bool>();
             try
             {
-                var product = _context.Products.Where(p => p.Id == Id).SingleOrDefault();
-                if (product != null)
+                var product = _context.Products.Where(p => p.Id == Id && !p.IsDeleted).SingleOrDefault();
+                if (product == null)
                 {
-                    //Product newPrpduct = new Product()
-                    //{
-                    //    Id = Id,
-                    //    IsDeleted = true,
-                    //    DatetimeDeleted = DateTime.Now,
-                    //};
+                    operation.OperrationResultType = OperationResultType.NotExit;
+                    operation.Result = false;
+                    return operation;
+                }
+                else if (product.IsDeleted)
+                {
+                    operation.OperrationResultType = OperationResultType.previouslyDeleted;
+                    operation.Result = false;
+                }
+                else
+                {
+
                     product.IsDeleted = true;
                     product.DatetimeDeleted = DateTime.UtcNow;
                     _context.Products.Update(product);
@@ -101,19 +128,68 @@ namespace Repostry.Repo
                     operation.Result = true;
 
                 }
-                else
-                {
-                    operation.OperrationResultType = OperationResultType.Failed;
-                    operation.Result = false;
-                }
-
             }
-            catch( Exception ex )
+            catch (Exception ex)
             {
-                operation.OperrationResultType=OperationResultType.Exception;
+                operation.OperrationResultType = OperationResultType.Exception;
                 operation.Exception = ex;
             }
 
+            return operation;
+        }
+
+        public async Task<OperationResult<dynamic>> GetAllProducts()
+        {
+            OperationResult<dynamic> operation = new OperationResult<dynamic>();
+            try
+            {
+                
+
+                var result = await _context.Products.Where(d => !d.IsDeleted)
+                    .Select(o => new { o.Id, o.Name, o.Description, o.Price })
+                .ToListAsync();
+                if (result.Count > 0)
+                {
+                    operation.OperrationResultType = OperationResultType.Success;
+                    operation.RangeResults = result;
+                }
+                else
+                {
+                    operation.OperrationResultType = OperationResultType.Failed;
+                    operation.Result = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                operation.OperrationResultType = OperationResultType.Exception;
+                operation.Exception = ex;
+            }
+            return operation;
+        }
+        public async Task<OperationResult<dynamic>> GetProductById(int id)
+        {
+            OperationResult<dynamic> operation = new OperationResult<dynamic>();
+            try
+            {
+                var result = await _context.Products.Where(d => !d.IsDeleted && d.Id == id)
+                     .Select(o => new { o.Id, o.Name, o.Description, o.Price })
+                     .SingleOrDefaultAsync();
+                if (result != null)
+                {
+                    operation.OperrationResultType = OperationResultType.Success;
+                    operation.Result = result;
+                }
+                else
+                {
+                    operation.OperrationResultType = OperationResultType.Failed;
+                    operation.Result = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                operation.OperrationResultType = OperationResultType.Exception;
+                operation.Exception = ex;
+            }
             return operation;
         }
     }

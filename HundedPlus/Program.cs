@@ -1,10 +1,11 @@
 using Base;
-using IRepostry;
+using Google.Api;
 using IRepostry.IRepo;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
-using Repostry;
+using Repostry.NotificationService;
 using Repostry.Repo;
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,10 +20,11 @@ builder.Services.AddDbContext<HundredPlusDbContext>(
             b => b.MigrationsAssembly(typeof(HundredPlusDbContext).Assembly.FullName))
     );
 
-builder.Services.AddScoped(typeof(IBaseRepostry<>),typeof(BaseRepostry<>)) ;
 builder.Services.AddScoped<IRepoProduct, RepoProduct>();
+builder.Services.AddScoped<NotificationService>();
 builder.Services.AddScoped<IRepoOffer, RepoOffer>();
 builder.Services.AddScoped<IRepoCategory, RepoCategory>();
+builder.Services.AddScoped<IRepoOrder, RepoOrder>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

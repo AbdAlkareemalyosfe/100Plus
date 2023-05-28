@@ -12,5 +12,6 @@ namespace Shared_Core
         Failed,
         Exception,
         NotExit,
+        previouslyDeleted ,
     }
 }

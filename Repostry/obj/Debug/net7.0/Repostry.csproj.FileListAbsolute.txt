@@ -40,3 +40,4 @@ D:\100Plus\Repostry\obj\Debug\net7.0\refint\Repostry.dll
 D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.pdb
 D:\100Plus\Repostry\obj\Debug\net7.0\Repostry.genruntimeconfig.cache
 D:\100Plus\Repostry\obj\Debug\net7.0\ref\Repostry.dll
+D:\100Plus\Repostry\bin\Debug\net7.0\NotificationService\google-services (1).json

@@ -19,10 +19,10 @@ namespace IRepostry.Model_Dto
 
         [DisplayName("Description  for Offer ")]
         public string? Description { get; set; }
-        public string StartOffer { get; set; }
+        public DateTime? StartOffer { get; set; }
 
         [DisplayName("The time  for end Offer")]
-        public string EndOffer { get; set; }
+        public DateTime? EndOffer { get; set; }
 
         [DisplayName("Id of product for Offer")]
         public int ProductId { get; set; }

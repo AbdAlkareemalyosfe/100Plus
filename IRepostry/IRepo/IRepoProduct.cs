@@ -1,5 +1,6 @@
 ﻿using Base.Models;
 using IRepostry.Model_Dto;
+using IRepostry.Model_Respons;
 using Shared_Core;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,15 @@ using System.Threading.Tasks;
 
 namespace IRepostry.IRepo
 {
-    public interface IRepoProduct : IBaseRepostry<Product>
+    public interface IRepoProduct 
     {
-        Task<OperationResult< Product>> AddProduct(ProductDtoModel productDto);
+        Task<OperationResult<ProductResponceInfo>> AddProduct(ProductDtoModel productDto);
         OperationResult<bool> DeletProduct(int Id);
-        Task<OperationResult<Product>> UpdateProduct(ProductDtoUp productDto);
+        Task<OperationResult<ProductResponceInfo>> UpdateProduct(ProductDtoUp productDto);
+        Task<OperationResult<dynamic>> GetAllProducts();
+        Task<OperationResult<dynamic>> GetProductById(int id);
+
+
 
     }
 }

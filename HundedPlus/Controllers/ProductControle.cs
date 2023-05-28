@@ -22,13 +22,13 @@ namespace HundedPlus.Controllers
         [HttpGet("GetAllProduct")]
        public async Task<IActionResult> GetAllProduct()
         {
-            var products = await repoProduct.GetAllAsync();
+            var products = await repoProduct.GetAllProducts();
             if (products == null)
             {
                 return NotFound();
             }
 
-            return Ok(products.ToList());
+            return Ok(products.RangeResults);
 
         }    
 
@@ -36,12 +36,12 @@ namespace HundedPlus.Controllers
         [HttpGet("GetByIdProduct")]
         public async Task<IActionResult> GetById(int Id)
         {
-            var product =await repoProduct.GetByIdAsync(Id);
+            var product =await repoProduct.GetProductById(Id);
             if (product == null)
             {
                 return NotFound();
             }
-            return Ok(product);
+            return Ok(product.Result);
            
         }
 

@@ -13,8 +13,8 @@ namespace Base.Models
        
         public string Name { get; set; }
         public string Description { get; set; } 
-        public string  StartOffer { get; set; }
-        public string EndOffer { get; set; }
+        public DateTime? StartOffer { get; set; }
+        public DateTime? EndOffer { get; set; }
         public double NewPrice { get; set; }
          public Product? product { get; set; }
         [ForeignKey(nameof(ProductId))]

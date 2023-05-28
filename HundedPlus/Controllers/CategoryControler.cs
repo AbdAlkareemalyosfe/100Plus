@@ -23,12 +23,12 @@ namespace HundedPlus.Controllers
         [HttpGet("GetAllCategories")]
         public async Task<IActionResult> GetAllCategories()
         {
-            var results = await _repoCategory.GetAllAsync();
+            var results = await _repoCategory.GetAllCategories ();
             if (results == null)
             {
                 return BadRequest(string.Empty);
             }
-            return Ok(results.ToList());
+            return Ok(results.RangeResults);
            
         }
 
@@ -37,16 +37,16 @@ namespace HundedPlus.Controllers
         public async Task<IActionResult> Get(int id)
         {
 
-            var result = await _repoCategory.GetByIdAsync(id);
+            var result = await _repoCategory.GetGategoryById(id);
             if (result == null)
             { return NotFound(); }
-            return Ok(result);
+            return Ok(result.Result);
 
         }
 
         // POST api/<CategoryControler>
         [HttpPost("AddCategory")]
-        public async Task<IActionResult> AddCategory( CategoryDtoModel categoryDto)
+        public async Task<IActionResult> AddCategory( [FromForm]CategoryDtoModel categoryDto)
         {
             var result = await _repoCategory.CreatCatogryAsync(categoryDto);
             switch (result.OperrationResultType)

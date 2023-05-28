@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IRepostry.Model_Dto
+namespace Shared_Core
 {
-    public class ProdutInfoResponce
+    public enum OrderStatus
     {
+        Processing,
+        Shipped,
+        Delivered,
+        Cancelled
     }
 }

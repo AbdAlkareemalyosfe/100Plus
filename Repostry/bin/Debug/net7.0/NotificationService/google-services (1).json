@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "106518257949",
+    "project_id": "plus-132fd",
+    "storage_bucket": "plus-132fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106518257949:android:659d421b9cd625873341f4",
+        "android_client_info": {
+          "package_name": "com.example.kareem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCw6XiZNJ5KGOIcPA2oSycdEJ7_LQLI8Bs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

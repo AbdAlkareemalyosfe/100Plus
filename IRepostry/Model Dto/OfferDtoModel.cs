@@ -14,10 +14,10 @@ namespace IRepostry.Model_Dto
         [DisplayName("Name of Offer")]
         public string Name { get; set; }
         public string Description { get; set; }
-        public string StartOffer { get; set; }
+        public DateTime? StartOffer { get; set; }
 
         [DisplayName("The time  for end Offer")]
-        public string  EndOffer { get; set; }
+        public DateTime? EndOffer { get; set; }
 
         [Required(ErrorMessage ="The Id of product is reqiured")]
         [DisplayName("Id of product for Offer" )]

@@ -26,20 +26,20 @@ namespace HundedPlus.Controllers
         [HttpGet("GetAllOffers")]
         public async Task<IActionResult>GetAllOffers() 
         {
-           var results = await _repoOffer.GetAllAsync();
+           var results = await _repoOffer.GetAllOffers();
             if (results== null) 
             { return NotFound(); }
-            return Ok(results.ToList());
+            return Ok(results.RangeResults);
         }
 
         // GET api/<OfferControler>/5
         [HttpGet("GetOfferById")]
         public async Task<IActionResult> GetOfferById(int id)
         {
-           var result =await _repoOffer.GetByIdAsync(id);
+           var result =await _repoOffer.GetOfferById(id);
             if(result==null) 
             { return NotFound(); } 
-            return Ok(result);
+            return Ok(result.Result);
         }
 
         // POST api/<OfferControler>

@@ -14,10 +14,12 @@ namespace Base.Models
         public string PhoneNumberOfUser { get; set; }
         
         public long PartialBalance {get; set; }
-        public double CostDilivary {get; set; }
+        public double CostDilivary { get; set; } = 15;
         public long TotalBalance {get; set; }
-       
+      
+        public OrderStatus? Status { get; set; }
         public ICollection<Category> Categories { get; set; }
+        
         public User user { get; set; }
         [ForeignKey("UserId")]
         public int UserId { get; set; }
